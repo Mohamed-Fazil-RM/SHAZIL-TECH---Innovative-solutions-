@@ -1,14 +1,18 @@
-
 "use client"
 
 import * as React from "react"
 import { HTMLMotionProps, motion } from "framer-motion"
 import { cn } from "../../lib/utils.ts"
 
+// Fix: Explicitly added children, className, and style to the CardStickyProps interface 
+// to ensure they are recognized by the TypeScript compiler during destructuring in the forwardRef component.
 interface CardStickyProps extends HTMLMotionProps<"div"> {
   index: number
   incrementY?: number
   incrementZ?: number
+  children?: React.ReactNode
+  className?: string
+  style?: React.CSSProperties
 }
 
 const ContainerScroll = React.forwardRef<

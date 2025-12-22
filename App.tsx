@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header.tsx';
 import Hero from './components/Hero.tsx';
 import Services from './components/Services.tsx';
@@ -14,7 +14,7 @@ import ContactPage from './components/ContactPage.tsx';
 
 export type ViewType = 'home' | 'about' | 'services' | 'contact';
 
-const App: React.FC = () => {
+const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [currentView, setCurrentView] = useState<ViewType>('home');
   const [targetServiceId, setTargetServiceId] = useState<string | null>(null);

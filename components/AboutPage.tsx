@@ -1,14 +1,6 @@
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { 
-  Zap, 
-  Shield, 
-  Cpu, 
-  Gauge, 
-  Bot, 
-  Handshake 
-} from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar.tsx';
 import RealismButton from './ui/shiny-borders-button.tsx';
 import { ViewType } from '../App.tsx';
@@ -44,17 +36,15 @@ const WHY_US_CARDS = [
   }
 ];
 
-const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
+const AboutPage = ({ setView }: AboutPageProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
-  // Scroll animation for the main feature image
   const { scrollYProgress } = useScroll({
     target: imageRef,
     offset: ["start end", "end start"]
   });
 
-  // Removed the blur transformation to satisfy user request for clear images
   const imageScale = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
@@ -74,7 +64,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
   return (
     <div className="pt-52 pb-24 bg-black min-h-screen" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header Section */}
         <div className="mb-24 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -131,7 +120,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
           </motion.div>
         </div>
 
-        {/* Feature Image Section */}
         <div ref={imageRef} className="relative max-w-5xl mx-auto mb-32 px-4">
           <motion.div 
             style={{ 
@@ -150,7 +138,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
           </motion.div>
         </div>
 
-        {/* Numbers that tell our story section */}
         <div className="py-24 flex flex-col items-center">
           <div className="text-center mb-20 space-y-4">
             <motion.h2 
@@ -173,13 +160,11 @@ const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full max-w-6xl mb-32">
-            {/* Left Column Stats */}
             <div className="lg:col-span-3 flex flex-col gap-6 order-2 lg:order-1">
               <StatCard value="100+" label="Satisfied Clients" />
               <StatCard value="250+" label="Cloud Deployments" />
             </div>
 
-            {/* Center Main Card */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -212,14 +197,12 @@ const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
               </div>
             </motion.div>
 
-            {/* Right Column Stats */}
             <div className="lg:col-span-3 flex flex-col gap-6 order-3">
               <StatCard value="50+" label="Projects Delivered" />
               <StatCard value="10k+" label="Hours of Development" />
             </div>
           </div>
 
-          {/* Who we are section - Now unified with images */}
           <div className="w-full max-w-6xl mt-12 py-16 border-t border-white/5 flex flex-col items-center">
             <div className="text-center max-w-4xl mb-16">
               <motion.div
@@ -246,7 +229,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
               </motion.div>
             </div>
 
-            {/* Image Cards */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch w-full">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -279,10 +261,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
             </div>
           </div>
 
-          {/* Why Us Section */}
           <div className="w-full max-w-6xl mt-40 py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-              {/* Left Column */}
               <div className="lg:sticky lg:top-40 text-left">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -307,7 +287,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ setView }) => {
                 </motion.div>
               </div>
 
-              {/* Right Column */}
               <div className="flex flex-col gap-6 md:gap-8">
                 {WHY_US_CARDS.map((card, idx) => (
                   <motion.div
