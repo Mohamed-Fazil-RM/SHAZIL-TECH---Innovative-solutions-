@@ -1,0 +1,31 @@
+{
+  "name": "copy-of-shazil-tech---innovative-solutions-(copy)",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "19.0.0",
+    "react-dom": "^19.2.3",
+    "@google/genai": "1.34.0",
+    "lucide-react": "0.475.0",
+    "gsap": "3.12.5",
+    "framer-motion": "11.11.17",
+    "class-variance-authority": "0.7.1",
+    "@radix-ui/react-slot": "1.1.2",
+    "@radix-ui/react-avatar": "1.1.3",
+    "clsx": "2.1.1",
+    "tailwind-merge": "2.6.0",
+    "three": "0.173.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

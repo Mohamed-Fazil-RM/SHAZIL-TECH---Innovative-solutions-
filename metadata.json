@@ -1,0 +1,8 @@
+{
+  "name": "Copy of SHAZIL TECH - Innovative Solutions (copy)",
+  "description": "Shazil Tech architects high-performance digital infrastructure, from mobile apps to intelligent automations. We empower brands with technical foundations that eliminate manual friction and drive global growth.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
