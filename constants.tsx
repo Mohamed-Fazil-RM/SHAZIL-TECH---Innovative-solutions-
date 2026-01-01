@@ -14,7 +14,7 @@ export const SERVICES: Service[] = [
   {
     id: 'web-mobile',
     title: 'Web & Mobile',
-    description: 'We build high-performance web and mobile apps using Next.js and React Native for a seamless cross-platform experience.',
+    description: 'We build high-performance web and mobile apps using Next.js and React Native for a cross-platform experience.',
     icon: <Code2 className="w-10 h-10 text-blue-500" />
   },
   {
